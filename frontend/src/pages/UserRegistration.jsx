@@ -29,7 +29,7 @@ const UserRegistration = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/register", {
+      const res = await fetch("https://labourease.onrender.com/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
