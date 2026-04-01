@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './Shopregisteration.css';
+import './RegistrationPages.css';
 
 const ShopkeeperRegistration = () => {
 
