@@ -56,7 +56,7 @@ const FranchiseeRegistration = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/api/franchisee/apply", {
+      const res = await fetch("https://labourease.onrender.com/api/franchisee/apply", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
