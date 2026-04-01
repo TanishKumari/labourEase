@@ -1,0 +1,98 @@
+/* ===== Page Background ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #cfd9df, #e2ebf0);
+}
+
+/* ===== Center Layout ===== */
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Card ===== */
+.login-card {
+  background: #bbb6b6;
+  padding: 25px 22px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Title ===== */
+.login-title {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* ===== Form Group ===== */
+.form-group {
+  margin-bottom: 12px;
+}
+
+/* ===== Input ===== */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #4a6cf7;
+}
+
+/* ===== Forgot Password ===== */
+.forgot-password {
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+.forgot-link {
+  font-size: 13px;
+  color: #4a6cf7;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== Button ===== */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #4a6cf7;
+  color: white;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background: #2f4ed8;
+}
+
+/* ===== Register Text ===== */
+.register-prompt {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.link {
+  color: #4a6cf7;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

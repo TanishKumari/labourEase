@@ -1,0 +1,155 @@
+/* ===== Registration Page Styles (Improved) ===== */
+*{
+box-sizing:border-box;
+}
+body {
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.register-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.register-container h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+/* FORM */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* INPUT GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #131111;
+}
+
+/* INPUT FIELDS */
+.form-group input {
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  background: #f9f9f9;
+  transition: all 0.25s ease;
+}
+
+/* INPUT FOCUS EFFECT */
+.form-group input:focus {
+  border-color: #007bff;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* PLACEHOLDER */
+.form-group input::placeholder {
+  color: #222121;
+  font-size: 18px;
+}
+
+/* ROW (FOR SIDE BY SIDE FIELDS) */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* BUTTON */
+.submit-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 123, 255, 0.25);
+}
+
+/* BUTTON CLICK */
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* LOGIN LINK */
+.login-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #666;
+}
+
+.login-link a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .register-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}

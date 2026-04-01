@@ -1,0 +1,205 @@
+/* PaymentPage.css */
+
+.payment-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #f0f4ff, #e5f6ff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.payment-wrapper {
+  width: 100%;
+  max-width: 48rem;
+}
+
+.payment-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* Header */
+.payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.backBtn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+ margin-right: 300px;
+  text-align: center;
+  flex: 1;
+}
+
+/* Wallet */
+.balanceCard {
+  background: linear-gradient(to right, #22c55e, #16a34a);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.walletIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.balance-sub {
+  font-size: 0.9rem;
+  color: #d1fae5;
+}
+
+.balance-amount {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Form */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.center {
+  text-align: center;
+}
+
+.inputWrapper {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.currencyPrefix {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 1.1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Methods */
+.method-section {
+  margin-top: 1rem;
+}
+
+.methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.method {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.2s;
+}
+
+.method:hover {
+  background: #f9fafb;
+}
+
+.method input {
+  margin: 0;
+}
+
+.methodIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #2563eb;
+}
+
+/* Note */
+.noteBox {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.noteTitle {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.noteText {
+  font-size: 0.9rem;
+  color: #1d4ed8;
+}
+
+/* Submit */
+.submitBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(to right, #2563eb, #16a34a);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.submitBtn:hover {
+  background: linear-gradient(to right, #1e3a8a, #15803d);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

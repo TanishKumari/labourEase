@@ -1,0 +1,161 @@
+/* ===== Page ===== */
+.contact-page {
+  min-height: 100vh;
+  background: #f4f6f9;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===== Hero ===== */
+.contact-hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.contact-hero p {
+  color: #666;
+}
+
+/* ===== Layout ===== */
+.contact-content {
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Form Card ===== */
+.contact-form-section {
+  background: rgb(215, 210, 210);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== Inputs ===== */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+/* ===== Row ===== */
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+/* ===== Record Section ===== */
+.record-section {
+  margin: 15px 0;
+  padding: 12px;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.record-btn {
+  background: #8e69c6;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.stop-btn {
+  background: #dc3545;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+audio {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* ===== Call Section ===== */
+.call-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.call-section p {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.call-btn {
+  display: inline-block;
+  background: #8e7aef;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.call-btn:hover {
+  background: #826dc7;
+}
+
+/* ===== Button ===== */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #2f4ed8;
+}
+
+/* ===== Success ===== */
+.success-message {
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 3rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

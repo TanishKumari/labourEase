@@ -1,0 +1,167 @@
+.services-page { 
+  padding: 40px 0;
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #efeff0 100%);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Search Bar */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.search-input-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-icon-inside {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 1.2rem;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-search-box {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: #fff;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+.service-search-box:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.4);
+}
+
+.service-search-box::placeholder {
+  color: #aaa;
+}
+
+/* Service Cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #666;
+}
+
+.service-icon {
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.icon-gray { background-color: #f3f4f6; color: #374151; }
+.icon-orange { background-color: #ffedd5; color: #c2410c; }
+.icon-blue { background-color: #dbeafe; color: #1d4ed8; }
+.icon-teal { background-color: #ccfbf1; color: #0f766e; }
+.icon-purple { background-color: #ede9fe; color: #6b21a8; }
+.icon-red { background-color: #fee2e2; color: #b91c1c; }
+.icon-green { background-color: #d1fae5; color: #065f46; }
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.service-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.service-arrow {
+  margin-top: auto;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-arrow {
+  transform: translateX(8px);
+}
+
+/* Mobile Fix */
+@media (max-width: 480px) {
+  .search-input-container {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .search-icon-inside {
+    left: 10px;
+    font-size: 1.1rem;
+  }
+
+  .service-search-box {
+    font-size: 1rem;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+  }
+
+  /* Make icon and text perfectly centered even with large placeholder */
+  .service-search-box::placeholder {
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+}
