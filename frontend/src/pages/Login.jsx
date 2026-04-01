@@ -43,8 +43,8 @@ const Login = () => {
 
       alert("Login successful ✅");
 
-      // redirect
-      navigate("/dashboard");
+      // 👉 HOME PAGE REDIRECT
+      navigate("/");
 
     } catch (err) {
       console.log(err);
