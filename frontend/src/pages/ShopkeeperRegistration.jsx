@@ -40,7 +40,6 @@ const ShopkeeperRegistration = () => {
   // IMAGE BASE64
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-
     if (!file) return;
 
     const reader = new FileReader();
@@ -72,7 +71,7 @@ const ShopkeeperRegistration = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // ✅ SUBMIT (API CONNECTED)
+  // SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -97,18 +96,28 @@ const ShopkeeperRegistration = () => {
         return;
       }
 
-      setLoading(false);
       setIsSubmitted(true);
 
     } catch (err) {
       console.log(err);
       alert("Server Error ❌");
+    } finally {
       setLoading(false);
     }
   };
 
   return (
     <div className="register-container">
+
+      {/* 🔥 LOADER */}
+      {loading && (
+        <div className="loader-overlay">
+          <div className="loader-box">
+            <div className="spinner"></div>
+            <p>Registering your shop... ⏳</p>
+          </div>
+        </div>
+      )}
 
       {!isSubmitted ? (
 
@@ -140,8 +149,8 @@ const ShopkeeperRegistration = () => {
 
             <input type="file" onChange={handleImageChange} />
 
-            <button type="submit">
-              {loading ? "Submitting..." : "Register"}
+            <button type="submit" disabled={loading}>
+              {loading ? "Registering..." : "Register"}
             </button>
 
           </form>
@@ -154,7 +163,6 @@ const ShopkeeperRegistration = () => {
 
       ) : (
 
-        // ✅ SUCCESS SCREEN
         <div style={{ textAlign: "center", padding: "40px" }}>
           <h2 style={{ color: "green" }}>🎉 Registration Successful</h2>
 
