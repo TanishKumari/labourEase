@@ -44,7 +44,7 @@ const Login = () => {
 
       localStorage.setItem("user", JSON.stringify(result.user));
 
-      alert("Login successful ✅");
+      
 
       navigate("/services");
 
