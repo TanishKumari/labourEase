@@ -5,6 +5,8 @@ import "./RegistrationPages.css";
 const UserRegistration = () => {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -28,6 +30,8 @@ const UserRegistration = () => {
       return;
     }
 
+    setLoading(true);
+
     try {
       const res = await fetch("https://labourease.onrender.com/api/register", {
         method: "POST",
@@ -46,6 +50,7 @@ const UserRegistration = () => {
 
       if (!res.ok) {
         alert(data.message);
+        setLoading(false);
         return;
       }
 
@@ -54,11 +59,23 @@ const UserRegistration = () => {
 
     } catch (err) {
       alert("Server error ❌");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="register-container">
+
+      {/* 🔥 LOADER */}
+      {loading && (
+        <div className="loader-overlay">
+          <div className="loader-box">
+            <div className="spinner"></div>
+            <p>Submitting... Please wait ⏳</p>
+          </div>
+        </div>
+      )}
 
       <h2>Create Account</h2>
       <p className="subtitle">Join LabourEase today</p>
@@ -90,8 +107,8 @@ const UserRegistration = () => {
           <input type="password" name="confirmPassword" placeholder="Confirm password" onChange={handleChange} required />
         </div>
 
-        <button className="submit-btn" type="submit">
-          Register
+        <button className="submit-btn" type="submit" disabled={loading}>
+          {loading ? "Submitting..." : "Register"}
         </button>
 
         <p className="login-link">
