@@ -50,7 +50,7 @@ const FranchiseeRegistration = () => {
     reader.readAsDataURL(file);
   };
 
-  // ✅ FINAL SUBMIT (API CALL)
+  // SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -72,18 +72,29 @@ const FranchiseeRegistration = () => {
         return;
       }
 
-      setLoading(false);
       setIsSubmitted(true);
 
     } catch (err) {
       console.log(err);
       alert("Server error ❌");
+    } finally {
       setLoading(false);
     }
   };
 
   return (
     <div className="page-container">
+
+      {/* 🔥 LOADER */}
+      {loading && (
+        <div className="loader-overlay">
+          <div className="loader-box">
+            <div className="spinner"></div>
+            <p>Submitting your application... ⏳</p>
+          </div>
+        </div>
+      )}
+
       <div className="registration-form">
 
         {!isSubmitted ? (
@@ -111,38 +122,38 @@ const FranchiseeRegistration = () => {
             </form>
           </>
         ) : (
-         <div style={{
-    textAlign: "center",
-    padding: "40px",
-    background: "#f5f5f5",
-    borderRadius: "10px"
-  }}>
-    <h2 style={{ color: "green" }}>🎉 Registration Successful</h2>
+          <div style={{
+            textAlign: "center",
+            padding: "40px",
+            background: "#f5f5f5",
+            borderRadius: "10px"
+          }}>
+            <h2 style={{ color: "green" }}>🎉 Registration Successful</h2>
 
-    <p style={{ marginTop: "15px", fontSize: "16px" }}>
-      Thank you for registering as a franchisee.
-      <br />
-      Your request has been sent to admin.
-    </p>
+            <p style={{ marginTop: "15px", fontSize: "16px" }}>
+              Thank you for registering as a franchisee.
+              <br />
+              Your request has been sent to admin.
+            </p>
 
-    <p style={{ marginTop: "10px", fontWeight: "bold", color: "orange" }}>
-      ⏳ Status: Pending Approval
-    </p>
+            <p style={{ marginTop: "10px", fontWeight: "bold", color: "orange" }}>
+              ⏳ Status: Pending Approval
+            </p>
 
-    <button
-      onClick={() => navigate("/")}
-      style={{
-        marginTop: "20px",
-        padding: "10px 20px",
-        background: "blue",
-        color: "#fff",
-        border: "none",
-        borderRadius: "5px"
-      }}
-    >
-      Go to Home
-    </button>
-  </div>
+            <button
+              onClick={() => navigate("/")}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                background: "blue",
+                color: "#fff",
+                border: "none",
+                borderRadius: "5px"
+              }}
+            >
+              Go to Home
+            </button>
+          </div>
         )}
 
       </div>
