@@ -10,6 +10,8 @@ const Login = () => {
     password: ""
   });
 
+  const [loading, setLoading] = useState(false); // ✅ loading state
+
   // handle input change
   const handleChange = (e) => {
     setData({
@@ -21,6 +23,7 @@ const Login = () => {
   // handle login
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true); // ✅ start loading
 
     try {
       const res = await fetch("https://labourease.onrender.com/api/login", {
@@ -35,20 +38,21 @@ const Login = () => {
 
       if (!res.ok) {
         alert(result.message);
+        setLoading(false);
         return;
       }
 
-      // save user in localStorage
       localStorage.setItem("user", JSON.stringify(result.user));
 
       alert("Login successful ✅");
 
-      // 👉 HOME PAGE REDIRECT
       navigate("/");
 
     } catch (err) {
       console.log(err);
       alert("Server error ❌");
+    } finally {
+      setLoading(false); // ✅ stop loading
     }
   };
 
@@ -58,6 +62,7 @@ const Login = () => {
         <h2 className="login-title">Login</h2>
 
         <form onSubmit={handleLogin}>
+          
           {/* Email */}
           <div className="form-group">
             <input
@@ -90,9 +95,10 @@ const Login = () => {
           </div>
 
           {/* Button */}
-          <button type="submit" className="login-button">
-            Login
+          <button type="submit" className="login-button" disabled={loading}>
+            {loading ? "Loading..." : "Login"}
           </button>
+
         </form>
 
         {/* Register Link */}
