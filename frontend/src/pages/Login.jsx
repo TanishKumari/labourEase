@@ -46,7 +46,7 @@ const Login = () => {
 
       alert("Login successful ✅");
 
-      navigate("/");
+      navigate("/services");
 
     } catch (err) {
       console.log(err);
