@@ -10,7 +10,7 @@ const Login = () => {
     password: ""
   });
 
-  const [loading, setLoading] = useState(false); // ✅ loading state
+  const [loading, setLoading] = useState(false);
 
   // handle input change
   const handleChange = (e) => {
@@ -23,7 +23,7 @@ const Login = () => {
   // handle login
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true); // ✅ start loading
+    setLoading(true);
 
     try {
       const res = await fetch("https://labourease.onrender.com/api/login", {
@@ -52,12 +52,23 @@ const Login = () => {
       console.log(err);
       alert("Server error ❌");
     } finally {
-      setLoading(false); // ✅ stop loading
+      setLoading(false);
     }
   };
 
   return (
     <div className="login-page">
+
+      {/* 🔥 LOADER */}
+      {loading && (
+        <div className="loader-overlay">
+          <div className="loader-box">
+            <div className="spinner"></div>
+            <p>Logging in... Please wait ⏳</p>
+          </div>
+        </div>
+      )}
+
       <div className="login-card">
         <h2 className="login-title">Login</h2>
 
@@ -96,7 +107,7 @@ const Login = () => {
 
           {/* Button */}
           <button type="submit" className="login-button" disabled={loading}>
-            {loading ? "Loading..." : "Login"}
+            {loading ? "Logging in..." : "Login"}
           </button>
 
         </form>
